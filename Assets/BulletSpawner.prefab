@@ -106,4 +106,4 @@ MonoBehaviour:
   bulletPrefab:
   - {fileID: 4465205073062516189, guid: 3128f030723b1c7409b09e6a9c9c8c6c, type: 3}
   - {fileID: 3302105196776699161, guid: bc349777ee692c64ea321aa115afe27e, type: 3}
-  DivisionPrefab: {fileID: 3302105196776699161, guid: bc349777ee692c64ea321aa115afe27e, type: 3}
+  - {fileID: 1914718684192825660, guid: 0189adf5ec40a9544a70161862a70dd6, type: 3}

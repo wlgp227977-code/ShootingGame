@@ -3,7 +3,7 @@ using UnityEngine;
 public class DivisionBullet : bullet
 {
     public GameObject smallPrefab;
-    private float divisionTime = 1f;
+    private float divisionTime = 0.5f;
     private float timer = 0;
     
 
@@ -20,14 +20,18 @@ public class DivisionBullet : bullet
 
      private void Spawn() 
     {
-        Vector3 position = transform.position;        
-        Quaternion rotation = transform.rotation;
+        Vector3 position = transform.position;
+        Vector3 direction = transform.forward;     
+        
+        for (int i = -1; i <= 1; i++)
+        {
+            Vector3 spawnPosition = position + transform.right * i;
+            Vector3 spawnDirection = direction + transform.right * i * 0.5f;
 
-        Vector3 position1 = position + transform.right;
-        Vector3 position2 = position - transform.right;
-                
-        Instantiate(smallPrefab, position1, rotation);
-        Instantiate(smallPrefab, position2, rotation);
+            Quaternion rotation = Quaternion.LookRotation(spawnDirection);
+            Instantiate(smallPrefab, spawnPosition, rotation);
+        }
+        
         Destroy(gameObject);
     }
 
